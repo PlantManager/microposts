@@ -29,6 +29,10 @@ module Microposts
       g.javascripts false
       g.helper false
       g.test_framework false
+
+    #2015/08/10 追記
+#    config.i18n.default_locale = :ja
+#    config.encoding = "utf-8"      
     end
   end
 end
