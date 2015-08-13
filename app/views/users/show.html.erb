@@ -2,3 +2,11 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+<p><%= @user.name %></p>
+<p><%= @user.area %></p>
+<p><%=  simple_format(@user.profile) %></p>
+<p><%= @user.email %></p>
+
+<p><%= link_to "プロフィールを編集", edit_user_path(current_user)  %></p>
+<hr>
+<p>views/users/show.html.erb</p>
