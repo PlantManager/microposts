@@ -7,9 +7,13 @@
     
     名前:
     <%= f.text_field :name %>
-  
+     
+    都道府県:
+    <%= f.text_field :area %>
+    
     プロフィール:
-    <%= f.text_area  simple_format(:profile) , :cols => 40, :rows => 5 %>
+    <%= f.text_area  :profile , :cols => 40, :rows => 5 %>
+<!--    f.text_area  simple_format(:profile) , :cols => 40, :rows => 5 %>-->
     
     メール:
     <%= f.text_field :email %>
