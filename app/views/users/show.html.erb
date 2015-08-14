@@ -34,14 +34,15 @@
 
 <hr>
 
-<p><%= link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
+
 <hr>
 <p>views/users/show.html.erb</p>
 <hr>
 
 
 <!-- render partial: 'microposts/micropost', collection: @microposts %>
-
+<p>
+link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
 <hr>
 
  @microposts.each do |micropost| %>
