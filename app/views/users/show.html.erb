@@ -42,21 +42,10 @@
 <p><%=  simple_format(@user.profile) %></p>
 <p><%= @user.email %></p>
 
-
+<% if logged_in? %>
 <hr>
+<p><%= link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
+<% end %>
 
+  <p>views/users/show.html.erb</p>
 
-<hr>
-<p>views/users/show.html.erb</p>
-<hr>
-
-
-<!-- render partial: 'microposts/micropost', collection: @microposts %>
-<p>
-link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
-<hr>
-
- @microposts.each do |micropost| %>
-  = render partial: 'microposts/micropost', locals: { micropost: micropost } %>　
-  
- end %>-->
