@@ -7,9 +7,9 @@
 <p><%=  simple_format(@user.profile) %></p>
 <p><%= @user.email %></p>
 
+<% if logged_in? %>
 <hr>
-
 <p><%= link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
+<% end %>
 
-<hr>
-<p>views/users/show.html.erb</p>
+  <p>views/users/show.html.erb</p>
