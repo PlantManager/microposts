@@ -8,10 +8,15 @@
       <% if @user.following_users.any? %>
       <h3><%= @user.following_users.count %> following</h3>
       
-        <%= @user.following_relationships.each do |n| %>
-
+ <!--       < @user.following_users(params[:name]).each do |n| %>
+          <p> n.name %></p>
+          
+         end %>
+-->
+        <%= @following.each do |n| %>
+        <p> <%= n.name %></p>
         <% end %>
-
+        
       <% end %>
     </section>
   </aside>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813050404) do
+ActiveRecord::Schema.define(version: 20150817132255) do
 
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,8 +42,12 @@ ActiveRecord::Schema.define(version: 20150813050404) do
     t.datetime "updated_at"
     t.string   "area"
     t.string   "profile"
+    t.integer  "follower_id"
+    t.integer  "followers_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["follower_id"], name: "index_users_on_follower_id"
+  add_index "users", ["followers_id"], name: "index_users_on_followers_id"
 
 end
