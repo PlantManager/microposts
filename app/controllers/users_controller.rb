@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 #   @user = User.find(params[:id])
     @microposts = @user.microposts
 #    @following = @user.following_users(params[:name])
-    @following = @user.following_users(params[:name])
+#    @following = @user.following_users(params[:name])
+    @follower = @user.following_users #showの部分でフォロワーの数を表示させたいためで必修ではありません。
+    @followed = @user.follower_users  #showの部分でフォロワーの数を表示させたいためで必修ではありません。
   end
   
   def new
@@ -35,6 +37,20 @@ class UsersController < ApplicationController
     end
   end
 
+  #フォローしているユーザー
+  def followings
+    @user = User.find(params[:id])
+    @follower = @user.following_users
+    @followed = @user.follower_users
+  end
+
+  #フォローされているユーザー
+  def followers
+    @user = User.find(params[:id])
+    @followed = @user.follower_users
+    @follower = @user.following_users
+  end
+  
   private
 
   def user_params
@@ -45,10 +61,5 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  def followers
-    @followers = @user.follower_users(params[:name])
-  end
-  def followings
-    @followings = @user.following_users(params[:name])
-  end
+  
 end

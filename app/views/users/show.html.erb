@@ -5,19 +5,16 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <% if @user.following_users.any? %>
-      <h3><%= @user.following_users.count %> following</h3>
-      
- <!--       < @user.following_users(params[:name]).each do |n| %>
-          <p> n.name %></p>
-          
-         end %>
--->
-        <%= @following.each do |n| %>
-        <p> <%= n.name %></p>
-        <% end %>
         
-      <% end %>
+
+    </section>
+    <section>
+      <div class="col-md-4 follow">
+        <p><small>ツイート</small>：<%= @user.microposts.count %></p>
+        <p><small>フォロー</small>：<%= link_to @follower.count, followings_user_path(@user) %></p>
+        <p><small>フォロワー</small>：<%= link_to @followed.count, followers_user_path(@user) %></p>
+      </div>  
+        
     </section>
   </aside>
   <div class="col-md-8">
@@ -25,32 +22,20 @@
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       
-
-      
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
     <% end %>
+  
   </div>
 </div>
 
 <hr>
-<hr>
-<hr>
-
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-<p><%= @user.name %></p>
-<p><%= @user.area %></p>
-<p><%=  simple_format(@user.profile) %></p>
-<p><%= @user.email %></p>
 
 <% if logged_in? %>
+<p><%= link_to "プロフィールを編集", edit_user_path(current_user) %></p>
 <hr>
-<p><%= link_to "プロフィールを編集", "https://twitter-tt.herokuapp.com" + edit_user_path(current_user) %></p>
 <% end %>
 
-  <p>views/users/show.html.erb</p>
+<p>views/users/show.html.erb</p>
 
