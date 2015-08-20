@@ -6,14 +6,8 @@
         <%= @user.name %>
       </h1>
     </section>
-    
-    <div class="row">
-      <div class="col-md-4 follow">
-        <p><small><%= link_to 'ツイート',current_user %></small></p>
-        <p><small>フォロー</small>：<%= link_to @follower.count, followings_user_path(@user) %></p>
-        <p><small>フォロワー</small>：<%= link_to @followed.count, followers_user_path(@user) %></p>
-      </div>  
-    </div>
+
+  <%= render(:partial => "followlist") %>
   </aside>
 
   <div class="col-md-8">
